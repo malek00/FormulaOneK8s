@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FormulaOneK8s.props" />
+</Project>
