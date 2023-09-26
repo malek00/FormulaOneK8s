@@ -25,7 +25,7 @@ pipeline {
 
     stage('Pushing Image') {
       environment {
-               registryCredential = 'dockerhub-credentials'
+               registryCredential = 'dockerHubLogin'
            }
       steps{
         script {
@@ -36,7 +36,7 @@ pipeline {
       }
     }
 
-    stage('Deploying React.js container to Kubernetes') {
+    stage('Deploying formulaOne to container to Kubernetes') {
       steps {
         script {
           kubernetesDeploy(configs: "deployment.yaml", "service.yaml")

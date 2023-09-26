@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-lb-service
+spec:
+  selector:
+    app.kubernetes.io/name: formula-app
+  ports:
+    - name: formula-app-port
+      protocol: TCP
+      port: 8080
+      targetPort: 80
+  type: LoadBalancer
+
+
