@@ -27,4 +27,5 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Code Analysis
-      run: dotnet format --check
+      run: dotnet tool install -g roslynator.dotnet.cli
+      run: roslynator analyze
