@@ -26,7 +26,5 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Analyze code quality
-      run: dotnet tool install -g roslynator.dotnet.cli
     - name: Analyze Code with Roslynator
       run: dotnet roslynator analyze
