@@ -29,4 +29,4 @@ jobs:
     - name: Analyze code quality
       run: dotnet tool install -g roslynator.dotnet.cli
     - name: Analyze Code with Roslynator
-      run: dotnet roslynator analyze --project "FormulaOneK8s.csproj"
+      run: dotnet roslynator analyze --project "/FormulaOneK8s.csproj"
