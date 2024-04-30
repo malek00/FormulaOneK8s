@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -26,8 +26,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Run .NET Code Analysis
-      uses: dotnet/code-analysis@v1
-      id: code-analysis
-      with:
-        build-breaking: true
+    - name: Analyze code quality
+      run: dotnet tool install -g roslynator.dotnet.cli
+    - name: Analyze Code with Roslynator
+      run: dotnet roslynator analyze --project "Path/To/Your/Project.csproj"
